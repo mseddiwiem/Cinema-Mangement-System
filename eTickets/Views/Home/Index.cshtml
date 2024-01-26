@@ -1,0 +1,62 @@
+﻿<!-- Views/Home/Index.cshtml -->
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = null;
+}
+<head>
+    <!-- Autres balises head... -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .welcome-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        box-sizing: border-box; /* Utiliser le modèle de boîte border-box */
+    }
+
+        .welcome-container img {
+            width: calc(100% - 40px); /* Ajuster la largeur de l'image en fonction de la bordure et de la marge */
+            height: calc(100% - 40px); /* Ajuster la hauteur de l'image en fonction de la bordure et de la marge */
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Ajouter une ombre à l'image */
+            border-radius: 15px; /* Ajouter une bordure arrondie à l'image */
+        }
+
+    .button-container {
+        position: absolute;
+        top: 58%; /* Ajuster la position verticale du conteneur de boutons */
+        right: 17%;
+        transform: translateY(-50%);
+    }
+
+    .btn-custom {
+        background-color: white; /* Couleur de fond */
+        color: black;
+        border: none;
+        border-radius: 7px; /* Bordure arrondie */
+        padding: 10px 20px; /* Espacement du contenu */
+        font-size: 18px; /* Taille de la police */
+        cursor: pointer;
+        font-family: 'Arial Rounded MT';
+        transition: background-color 0.3s ease; /* Transition en douceur pour la couleur de fond */
+    }
+</style>
+
+
+<div class="welcome-container">
+    <img src="~/backend.png" alt="Movie App Image" />
+    <div class="button-container">
+        <form asp-controller="Movies" asp-action="Index" method="get">
+            <button type="submit" class="btn btn-custom">Discover Now</button>
+        </form>
+    </div>
+</div>
